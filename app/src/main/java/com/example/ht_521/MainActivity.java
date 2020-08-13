@@ -78,13 +78,13 @@ public class MainActivity extends AppCompatActivity {
                 String[] data = line.split(";");
                 String savedLogin = data[0];
                 String savedPassword = data[1];
-                if (loginInput.equals(savedLogin) && passwordInput.equals(savedPassword))
+                if (loginInput.equals(savedLogin) && passwordInput.equals(savedPassword)) {
                     Toast.makeText(this, "Вход успешен)", Toast.LENGTH_SHORT).show();
-                else Toast.makeText(this, "Данные не совпадают :(", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, NotReallyAnEasterEgg.class));
+                } else Toast.makeText(this, "Данные не совпадают :(", Toast.LENGTH_SHORT).show();
             }
         }
         bufferedReader.close();
-        startActivity(new Intent(MainActivity.this, NotReallyAnEasterEgg.class));
     }
 
     public void initViews() {
